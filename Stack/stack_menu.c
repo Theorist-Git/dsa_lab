@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "Stack/stack_struct.c"
+#include "stack_struct.c"
 
 int main() {
     stack stk;
