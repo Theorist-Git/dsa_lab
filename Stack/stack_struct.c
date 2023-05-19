@@ -32,17 +32,14 @@ void push(stack* stk, int val) {
     if (stk->top < MAX - 1) {
         stk->top++;
         stk->stack[stk->top] = val;
-        print_stack(stk);
     } else {
         printf("Stack Overflow\nMax stack size: %d\n", MAX);
-        print_stack(stk);
     }
 }
 
 void pop(stack* stk) {
     if (stk->top != -1) {
         stk->top--;
-        print_stack(stk);
     } else {
         printf("Stack Underflow\n");
     }
@@ -50,7 +47,7 @@ void pop(stack* stk) {
 
 void seek(stack* stk) {
     if (stk->top != -1) {
-        printf("Last Element i.e top points to: %d", stk->stack[stk->top]);
+        printf("Last Element i.e top points to: %d\n", stk->stack[stk->top]);
     } else {
         printf("Stack is empty\n");
     }

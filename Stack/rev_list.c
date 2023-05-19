@@ -22,6 +22,7 @@ int main() {
     for (int i = 0; i < len; i++) {
         push(&stk, arr[len - (i + 1)]);
     }
+    print_stack(&stk);
 
     return 0;
 }

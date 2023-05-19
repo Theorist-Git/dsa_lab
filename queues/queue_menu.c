@@ -8,7 +8,7 @@ int main() {
 
     while (1) {
         int choice;
-        printf("Enter 1 to ENQUEUE to stack\nEnter 2 to DEQUEUE stack\nEnter 0 to QUIT: ");
+        printf("Enter 1 to ENQUEUE\nEnter 2 to DEQUEUE\nEnter 0 to QUIT: ");
         scanf("%d", &choice);
         if (choice == 1) {
             int val;

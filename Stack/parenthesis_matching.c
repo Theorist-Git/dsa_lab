@@ -23,6 +23,9 @@ int is_balanced(char* arr) {
         }
         i++;
     }
+    if (!is_empty(&stk)) {
+        return 0;
+    }
 
     return 1;
 }

@@ -14,8 +14,10 @@ int main() {
             printf("Enter value to be PUSHED: ");
             scanf("%d", &val);
             push(&stk, val);
+            print_stack(&stk);
         } else if (choice == 2) {
             pop(&stk);
+            print_stack(&stk);
         } else if (choice == 3) {
             seek(&stk);
         } else if (choice == 0) {
