@@ -66,7 +66,7 @@ void insert_after(int data_after, int node_data) {
             if (iter->data == data_after) {
                 insert_back(node_data);
             } else {
-                printf("Data not present in LinkeList!\n");
+                printf("Data not present in Linked List!\n");
             }
         } else {
             node* new_node = malloc(sizeof(node));
@@ -75,9 +75,8 @@ void insert_after(int data_after, int node_data) {
             new_node->prev = iter;      // new node's prev pointer now points to iter node
             new_node->next = iter->next;// next ptr points to node after iter
 
-            node* orig_temp_next = iter->next;
             iter->next = new_node;
-            orig_temp_next->prev = new_node; 
+            new_node->next->prev = new_node; 
         }
     }
 }
@@ -105,9 +104,8 @@ void insert_before(int data_before, int node_data) {
             new_node->next = iter;      // new node's prev pointer now points to iter node
             new_node->prev = iter->prev;// next ptr points to node after iter
 
-            node* orig_temp_prev = iter->prev;
             iter->prev = new_node;
-            orig_temp_prev->next = new_node; 
+            new_node->prev->next = new_node;
         }
     }
 }

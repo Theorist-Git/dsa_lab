@@ -8,6 +8,7 @@ typedef struct Node {
     struct Node* right_child;
 } node;
 
+// O(1)
 node* new_node(int data) {
     node* new_node = malloc(sizeof(node));
     new_node->data = data;
@@ -18,6 +19,7 @@ node* new_node(int data) {
     return new_node;
 }
 
+// O(1)
 node* insert_left(node* parent, int data) {
     parent->left_child = new_node(data);
 
@@ -29,6 +31,42 @@ node* insert_right(node* parent, int data) {
 
     return parent->right_child;
 }
+
+// left root right
+// O(n) where n = number of nodes. (Each node is traversed once)
+void inorder(node* root) {
+    if (root == NULL) {
+        return;
+    } else {
+        inorder(root->left_child);
+        printf("%d ", root->data);
+        inorder(root->right_child);
+    }
+}
+
+// root left right
+// O(n) where n = number of nodes. (Each node is traversed once)
+void preorder(node* root) {
+    if (root == NULL) {
+        return;
+    } else {
+        printf("%d ", root->data);
+        preorder(root->left_child);
+        preorder(root->right_child);
+    }
+}
+
+// left right root
+// O(n) where n = number of nodes. (Each node is traversed once)
+void postorder(node* root) {
+    if (root == NULL) {
+        return;
+    } else {
+        postorder(root->left_child);
+        postorder(root->right_child);
+        printf("%d ", root->data);
+    }
+} 
 
 void display_util(node* root, int space) {
     // Base case
